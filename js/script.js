@@ -1,0 +1,89 @@
+
+// menu hambúrguer simples
+document.getElementById('menu-toggle').addEventListener('click', function () {
+  document.getElementById('menu').classList.toggle('show');
+});
+
+// validação de formulário
+document.getElementById('alerta-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const nome = document.getElementById('nome').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if (nome && email) {
+    document.getElementById('form-msg').innerText = 'Cadastrado com sucesso!';
+  } else {
+    document.getElementById('form-msg').innerText = 'Preencha todos os campos!';
+  }
+});
+
+// slides simples
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+setInterval(function () {
+  slides.forEach(function (s) { s.classList.remove('active'); });
+  slideIndex = (slideIndex + 1) % slides.length;
+  slides[slideIndex].classList.add('active');
+}, 3000);
+
+// quiz com as 10 perguntas sobre o tema
+const perguntas = [
+  { q: "A IA pode prever enchentes?", c: true },
+  { q: "O uso de sensores pode antecipar catástrofes?", c: true },
+  { q: "As enchentes só acontecem em áreas rurais?", c: false },
+  { q: "Alertas em tempo real ajudam a salvar vidas?", c: true },
+  { q: "Aplicativos de alerta funcionam offline?", c: true },
+  { q: "Big Data não é útil em desastres naturais?", c: false },
+  { q: "Satélites detectam áreas de risco?", c: true },
+  { q: "O Brasil possui cobertura total de monitoramento?", c: false },
+  { q: "A falta de infraestrutura agrava os impactos?", c: true },
+  { q: "Modelagem urbana não ajuda na prevenção?", c: false }
+];
+
+// criação do quiz
+const quizContainer = document.getElementById('quiz-container');
+perguntas.forEach(function (pergunta, i) {
+  const label = document.createElement('label');
+  label.innerText = pergunta.q;
+  const input = document.createElement('input');
+  input.type = 'checkbox';
+  input.dataset.index = i;
+  quizContainer.appendChild(label);
+  quizContainer.appendChild(input);
+  quizContainer.appendChild(document.createElement('br'));
+});
+
+// validação do quiz
+document.getElementById('quiz-submit').addEventListener('click', function () {
+  let score = 0;
+  const inputs = quizContainer.querySelectorAll('input');
+  inputs.forEach(function (input) {
+    const i = input.dataset.index;
+    if (input.checked == perguntas[i].c) score++;
+  });
+  document.getElementById('quiz-result').innerText = `Você acertou ${score} de 10 perguntas.`;
+});
+
+// troca de tema
+document.querySelectorAll('.tema').forEach(function (botao) {
+  botao.addEventListener('click', function () {
+    const cor = botao.dataset.cor;
+
+    if (cor === "claro") {
+      document.documentElement.style.setProperty('--fundo', '#ffffff');
+      document.documentElement.style.setProperty('--texto', '#000000');
+      document.documentElement.style.setProperty('--azul', '#007bff');
+      document.documentElement.style.setProperty('--borda', '#cccccc');
+    } else if (cor === "verde") {
+      document.documentElement.style.setProperty('--fundo', '#001f1f');
+      document.documentElement.style.setProperty('--texto', '#aaffaa');
+      document.documentElement.style.setProperty('--azul', '#00ffaa');
+      document.documentElement.style.setProperty('--borda', '#004d4d');
+    } else {
+      // tema padrao
+      document.documentElement.style.setProperty('--fundo', '#0d1117');
+      document.documentElement.style.setProperty('--texto', '#c9d1d9');
+      document.documentElement.style.setProperty('--azul', '#58a6ff');
+      document.documentElement.style.setProperty('--borda', '#30363d');
+    }
+  });
+});
