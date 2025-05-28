@@ -1,5 +1,5 @@
 
-/* reset */
+/* reset basico */
 * {
   margin: 0;
   padding: 0;
@@ -16,26 +16,26 @@
   --input-bg: #161b22;
   --botao-bg: #58a6ff;
   --botao-txt: #ffffff;
-} /* todas as variaveis de cor do site, para mudar o tema depois com js */
+} /* variaveis de cor do site, para facilitar a troca de tema com js depois */
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* para suavizar o scroll e ficar suave quando clickar nos links */
 }
 
-body {
+body { /* define fundo, cor do texto e a fonte padrao para o site */
   background-color: var(--fundo);
   color: var(--texto);
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
 }
 
-header, footer {
+header, footer { /* header e footer com fundo, padding e alinhamento */
   background-color: var(--card);
   padding: 1rem;
   text-align: center;
 }
 
-nav {
+nav { /* menu de navegação com flexbox */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,7 +43,7 @@ nav {
   padding: 0 1rem;
 }
 
-section img {
+section img { /* estilo das imagens com responsividade, borda e sombra */
   width: 100%;
   max-width: 500px;
   height: auto;
@@ -54,7 +54,7 @@ section img {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.logo {
+.logo { /* destaque no logo/nome do site */
   font-weight: bold;
   color: var(--azul);
   font-size: 1.2rem;
@@ -121,7 +121,7 @@ img {
   margin-top: 1rem;
 }
 
-form {
+form { /* formulario com flexbox para alinhar os campos, estilo de ajuda e usando inputs */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -144,7 +144,7 @@ form button {
   border: none;
 }
 
-.temas {
+.temas { /* estilo dos botoes de mudar o tema */
   display: flex;
   gap: 0.5rem;
   justify-content: center;
@@ -188,7 +188,7 @@ form button {
   opacity: 0.85;
 }
 
-#quiz-submit {
+#quiz-submit { /* botao de enviar quiz estilizado com transition p ficar mais bonito */
   margin-top: 1rem;
   padding: 0.5rem;
   border-radius: 4px;
