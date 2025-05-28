@@ -70,8 +70,8 @@ document.getElementById('quiz-submit').addEventListener('click', function () {
 });
 
 // troca de tema
-document.querySelectorAll('.tema').forEach(function (botao) {
-  botao.addEventListener('click', function () {
+document.querySelectorAll('.tema').forEach(function (botao) { // troca as cores do site com base no botão clicado usando variáveis CSS
+  botao.addEventListener('click', function () { 
     const cor = botao.dataset.cor;
 
     if (cor === "claro") { // tema claro
