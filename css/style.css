@@ -99,6 +99,7 @@ main {
 section {
   padding: 2rem;
   border-bottom: 1px solid var(--borda);
+  margin-bottom : 0.5rem;
   background-color: var(--fundo);
   border-radius: 8px;
 }
