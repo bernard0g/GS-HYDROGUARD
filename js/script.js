@@ -18,12 +18,13 @@ document.getElementById('alerta-form').addEventListener('submit', function (e) {
 
 // slides simples
 let slideIndex = 0;
+const tempoDaTropa = 3000; // tempo de transição em milissegundos
 const slides = document.querySelectorAll('.slide');
 setInterval(function () {
   slides.forEach(function (s) { s.classList.remove('active'); });
   slideIndex = (slideIndex + 1) % slides.length;
   slides[slideIndex].classList.add('active');
-}, 3000);
+}, tempoDaTropa); // troca de slides a cada 3 segundos
 
 // quiz com as 10 perguntas sobre o tema
 const perguntas = [
