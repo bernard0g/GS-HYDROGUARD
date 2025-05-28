@@ -13,6 +13,10 @@
   --borda: #30363d;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--fundo);
   color: var(--texto);
@@ -41,6 +45,14 @@ section img {
   object-fit: cover;
   margin-top: 1rem;
   border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#ajuda img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
 
 .logo {
