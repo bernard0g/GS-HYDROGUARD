@@ -42,14 +42,19 @@ const perguntas = [
 // criação do quiz
 const quizContainer = document.getElementById('quiz-container');
 perguntas.forEach(function (pergunta, i) {
-  const label = document.createElement('label');
-  label.innerText = pergunta.q;
+  const container = document.createElement('div');
+  container.className = 'quiz-item';
+
+  const perguntaTexto = document.createElement('span');
+  perguntaTexto.innerText = pergunta.q;
+
   const input = document.createElement('input');
   input.type = 'checkbox';
   input.dataset.index = i;
-  quizContainer.appendChild(label);
-  quizContainer.appendChild(input);
-  quizContainer.appendChild(document.createElement('br'));
+
+  container.appendChild(perguntaTexto);
+  container.appendChild(input);
+  quizContainer.appendChild(container);
 });
 
 // validação do quiz
