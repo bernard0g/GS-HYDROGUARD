@@ -79,6 +79,10 @@ document.querySelectorAll('.tema').forEach(function (botao) {
       document.documentElement.style.setProperty('--texto', '#000000');
       document.documentElement.style.setProperty('--azul', '#007bff');
       document.documentElement.style.setProperty('--borda', '#cccccc');
+      document.documentElement.style.setProperty('--card', '#f5f5f5');
+      document.documentElement.style.setProperty('--input-bg', '#e9e9e9');
+      document.documentElement.style.setProperty('--botao-bg', '#007bff');
+      document.documentElement.style.setProperty('--botao-txt', '#ffffff');
     } else if (cor === "verde") {
       document.documentElement.style.setProperty('--fundo', '#001f1f');
       document.documentElement.style.setProperty('--texto', '#aaffaa');
