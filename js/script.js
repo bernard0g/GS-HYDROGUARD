@@ -74,7 +74,7 @@ document.querySelectorAll('.tema').forEach(function (botao) {
   botao.addEventListener('click', function () {
     const cor = botao.dataset.cor;
 
-    if (cor === "claro") {
+    if (cor === "claro") { // tema claro
       document.documentElement.style.setProperty('--fundo', '#ffffff');
       document.documentElement.style.setProperty('--texto', '#000000');
       document.documentElement.style.setProperty('--azul', '#007bff');
@@ -83,17 +83,26 @@ document.querySelectorAll('.tema').forEach(function (botao) {
       document.documentElement.style.setProperty('--input-bg', '#e9e9e9');
       document.documentElement.style.setProperty('--botao-bg', '#007bff');
       document.documentElement.style.setProperty('--botao-txt', '#ffffff');
-    } else if (cor === "verde") {
+    } else if (cor === "verde") { // tema verde
       document.documentElement.style.setProperty('--fundo', '#001f1f');
       document.documentElement.style.setProperty('--texto', '#aaffaa');
       document.documentElement.style.setProperty('--azul', '#00ffaa');
       document.documentElement.style.setProperty('--borda', '#004d4d');
+      document.documentElement.style.setProperty('--card', '#003333');
+      document.documentElement.style.setProperty('--input-bg', '#004444');
+      document.documentElement.style.setProperty('--botao-bg', '#00ffaa');
+      document.documentElement.style.setProperty('--botao-txt', '#001f1f');
     } else {
       // tema padrao
       document.documentElement.style.setProperty('--fundo', '#0d1117');
       document.documentElement.style.setProperty('--texto', '#c9d1d9');
       document.documentElement.style.setProperty('--azul', '#58a6ff');
+      document.documentElement.style.setProperty('--azul-claro', '#89d4ff');
       document.documentElement.style.setProperty('--borda', '#30363d');
+      document.documentElement.style.setProperty('--card', '#161b22');
+      document.documentElement.style.setProperty('--input-bg', '#161b22');
+      document.documentElement.style.setProperty('--botao-bg', '#58a6ff');
+      document.documentElement.style.setProperty('--botao-txt', '#ffffff');
     }
   });
 });
