@@ -183,6 +183,10 @@ form button {
   font-weight: bold;
 }
 
+#quiz-submit:hover {
+  opacity: 0.85;
+}
+
 #quiz-submit {
   margin-top: 1rem;
   padding: 0.5rem;
@@ -191,6 +195,7 @@ form button {
   color: white;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;;
 }
 
 #quiz-result {
